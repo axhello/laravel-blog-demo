@@ -1,0 +1,17 @@
+.content-form .form-group{
+	width: 900px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+	color: #313131;
+}
+.modal-backdrop{
+	z-index: 0;
+}
+.control-label {
+	font-weight: normal;
+	text-align: right;
+	padding-right: 30px;
+}
+.box-body{
+	padding: 25px;
+}
