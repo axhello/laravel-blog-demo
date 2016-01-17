@@ -2543,7 +2543,7 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * An alternative more semantic shortcut to the message container.
+     * An alternative more flat-ui shortcut to the message container.
      *
      * @return \Illuminate\Support\MessageBag
      */

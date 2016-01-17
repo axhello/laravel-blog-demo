@@ -9,6 +9,18 @@
 					Reset Your Password
 				</div>
 			</h2>
+			@if ($errors->any())
+				<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<ul style="text-align: left">
+						@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
+			@endif
 			<form class="ui large form" role="form" method="POST" action="{{ url('/password/reset') }}">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="hidden" name="token" value="{{ $token }}">
@@ -36,13 +48,7 @@
 				</div>
 
 				<div class="ui error message">
-					<ul class="list">
-						@if (count($errors) > 0)
-							@foreach ($errors->all() as $error)
-								<li>{{ $error }}</li>
-							@endforeach
-						@endif
-					</ul>
+
 				</div>
 			</form>
 

@@ -78,11 +78,11 @@ abstract class ParserAbstract implements Parser
 
     /** @var Lexer Lexer that is used when parsing */
     protected $lexer;
-    /** @var mixed Temporary value containing the result of last semantic action (reduction) */
+    /** @var mixed Temporary value containing the result of last flat-ui action (reduction) */
     protected $semValue;
-    /** @var int Position in stacks (state stack, semantic value stack, attribute stack) */
+    /** @var int Position in stacks (state stack, flat-ui value stack, attribute stack) */
     protected $stackPos;
-    /** @var array Semantic value stack (contains values of tokens and semantic action results) */
+    /** @var array Semantic value stack (contains values of tokens and flat-ui action results) */
     protected $semStack;
     /** @var array[] Start attribute stack */
     protected $startAttributeStack;
@@ -149,7 +149,7 @@ abstract class ParserAbstract implements Parser
         $state = 0;
         $stateStack = array($state);
 
-        // Semantic value stack (contains values of tokens and semantic action results)
+        // Semantic value stack (contains values of tokens and flat-ui action results)
         $this->semStack = array();
 
         // Current position in the stack(s)
@@ -398,7 +398,7 @@ abstract class ParserAbstract implements Parser
     */
 
     /*
-     * Helper functions invoked by semantic actions
+     * Helper functions invoked by flat-ui actions
      */
 
     /**

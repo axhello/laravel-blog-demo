@@ -12896,7 +12896,7 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 					.appendTo( this.element );
 
 				classes = "ui-slider-range" +
-				// note: this isn't the most fittingly semantic framework class for this element,
+				// note: this isn't the most fittingly flat-ui framework class for this element,
 				// but worked best visually with a variety of themes
 				" ui-widget-header ui-corner-all";
 			} else {

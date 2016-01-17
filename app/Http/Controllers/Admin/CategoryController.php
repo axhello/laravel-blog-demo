@@ -24,7 +24,7 @@ class CategoryController extends Controller
         return view('admin.categories.create',compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(Requests\Categories $request)
     {
         //dd(Input::get());
         $category = Category::create(Input::get());
@@ -42,7 +42,7 @@ class CategoryController extends Controller
         return view('admin.categories.edit',compact('categories','category'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Requests\Categories $request, $id)
     {
         $category = Category::findOrFail($id);
         $category->update(Input::get());

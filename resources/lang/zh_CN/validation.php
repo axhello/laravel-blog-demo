@@ -84,11 +84,25 @@ return [
     |
     */
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => '用户名不能为空。',
         ],
+        'email' => [
+            'required' => '邮箱不能为空。',
+        ],
+        'password' => [
+            'required' => '密码不能为空。',
+            'confirmed' => '密码两次输入不一致。',
+            'min' => '密码至少为6个字符。',
+        ],
+        'title' => [
+            'required' => '标题不能为空。',
+        ],
+        'content' => [
+            'required' => '内容不能为空。',
+        ]
     ],
-    /*
+    /*a
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
     |--------------------------------------------------------------------------
