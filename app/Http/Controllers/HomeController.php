@@ -14,7 +14,9 @@ class HomeController extends BaseController
 
         $categories = $this->categories();
         $articles = Article::orderBy('id', 'desc')->paginate(8);
-        return view('home.index',compact('articles','categories'));
+        $tags = Tag::all();
+
+        return view('home.index',compact('articles','categories','tags'));
 
     }
 
@@ -23,7 +25,8 @@ class HomeController extends BaseController
     {
         $article = Article::findOrFail($id);
         $categories = $this->categories();
-        return view('home.single',compact('article','categories'));
+        $tags = Tag::all();
+        return view('home.single',compact('article','categories','tags'));
     }
 
     public function category($id)
@@ -31,7 +34,8 @@ class HomeController extends BaseController
         $categories = $this->categories();
         $articles =  Category::findOrFail($id)->articles()->orderBy('id', 'desc')->paginate(8);
         $category = Category::findOrFail($id);
-        return view('home.category',compact('categories','articles','category'));
+        $tags = Tag::all();
+        return view('home.category',compact('categories','articles','category','tags'));
     }
 
     public function tag($id)
@@ -39,7 +43,8 @@ class HomeController extends BaseController
         $categories = $this->categories();
         $articles = Tag::findOrFail($id)->articles()->orderBy('id', 'desc')->paginate(8);
         $tag = Tag::findOrFail($id);
-        return view('home.tag',compact('categories','tag','articles'));
+        $tags = Tag::all();
+        return view('home.tag',compact('categories','tag','articles','tags'));
     }
 
 }

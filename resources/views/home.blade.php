@@ -8,11 +8,8 @@
 	<link rel="icon" href="{{asset('favicon.ico')}}">
 	<title>@yield('title')Laravel Blog</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="{{ asset('admin-assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-	<!-- Custom styles for this template -->
 	<link href="{{ asset('home-assets/css/main.css') }}" rel="stylesheet">
+	<link href="{{ asset('admin-assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -56,9 +53,62 @@
 		<main class="tmd-main bs-block">
 			<div class="container">
 
-			@yield('content')
+				@yield('content')
 
-				@include('home.sidebar')
+				<aside class="tmd-secondary col-sm-3 col-sm-offset">
+					<div class="tmd-widget widget_search">
+						<div>
+							<form class="bs-form-icon bs-width-1-1" method="get" action="post" role="search">
+								<input class="bs-width-1-1" type="search" placeholder="Search" value="" name="s">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</form>
+						</div>
+					</div>
+					<div class="tmd-widget bs-panel widget_recent-posts">
+						<h3 class="bs-panel-title">Recent Posts</h3>
+						<div class="bs-list">
+							<ul>
+								<li>阿里云9折优惠码：<strong>并没有╮(╯▽╰)╭</strong></li>
+							</ul>
+						</div>
+					</div>
+					<div class="tmd-widget bs-panel widget_recent-comments">
+						<h3 class="bs-panel-title">Recent Comments</h3>
+						<div class="bs-list">
+							<ul>
+								<li><a href="#">暂时没有什么</a></li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="tmd-widget bs-panel widget_categories">
+						<h3 class="bs-panel-title">Categories</h3>
+						<div class="bs-list">
+							<ul>
+								@foreach($categories as $category)
+									<li>
+										<a href="{{ url('category/'.$category->id) }}">
+											@if($category->pid) &nbsp;&nbsp;&nbsp;— @endif
+											{{ $category->name }}
+										</a>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
+					<div class="tmd-widget bs-panel widget_archives">
+						<h3 class="bs-panel-title">Tags</h3>
+						<div class="bs-list">
+							<ul class="tags-list">
+								@foreach($tags as $tag)
+									<li class="tags">
+										<a class="label label-primary" href="{{url('tag/'.$tag->id)}}">{{$tag->name}}</a>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
+				</aside>
 
 			</div>
 	</div>

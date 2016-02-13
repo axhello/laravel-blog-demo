@@ -20,6 +20,9 @@ a {
   font-weight: 200;
   text-decoration: none;
 }
+.tmd-branding:hover a{
+  text-decoration: none;
+}
 .bs-block {
   position: relative;
   -moz-box-sizing: border-box;
@@ -39,9 +42,15 @@ a {
 .tmd-main {
   background-color: #FAFAFA;
 }
-/**/
+/*Single*/
+.article-content{
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
 .bs-panel-box {
-  padding: 25px;
+  padding: 2rem;
   background: #fff;
   color: #444;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -79,6 +88,7 @@ h2.bs-article-title {
 }
 .bs-article-title:hover a {
   color: #3DA947;
+  text-decoration: none;
 }
 .bs-article-meta {
   font-size: 12px;
@@ -211,6 +221,17 @@ input[type="search"]:focus {
   margin: 0;
   padding: 0;
 }
+.tags-list li{
+  display: inline-block;
+  margin-right: 5px;
+}
+.lable{
+  padding: .4em .6em .4em;
+  font-size: 83%;
+}
+.tags-list.tags a{
+  color: #fff;
+}
 .bs-panel-title {
   margin-top: 0;
   padding-bottom: 5px;
@@ -233,9 +254,9 @@ input[type="search"]:focus {
 }
 /**/
 .breadcrumb {
-  padding: 0 0 16px 0!important;
+  padding: 0 0 5px 0!important;
   margin-bottom: 0!important;
-  background-color: #FAFAFA!important;
+  background-color: #fff!important;
 }
 .bs-pagination {
   margin-top: 25px;

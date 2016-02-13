@@ -22,7 +22,7 @@
                 </header>
                 <div>
                     <div class="tmd-article-content">
-                        <p>{!! str_limit(EndaEditor::MarkDecode($article->content),200) !!}</p>
+                        <p>{!! str_limit(strip_tags(EndaEditor::MarkDecode($article->content)),250) !!}</p>
                         <p>
                             <a href="{{url('Particle/'.$article->id)}}" class="more-link">Continue reading</a>
                         </p>

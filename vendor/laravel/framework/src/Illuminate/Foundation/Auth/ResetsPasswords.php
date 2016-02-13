@@ -118,6 +118,4 @@ trait ResetsPasswords
 
         Auth::login($user);
     }
-
-
 }

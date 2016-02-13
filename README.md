@@ -1,5 +1,6 @@
 # laravel-blog
 Laravel博客演示
+
 ### Usage
 
 1.克隆或者下载到你的服务器
@@ -7,7 +8,7 @@ Laravel博客演示
 git clone https://github.com/melifes/laravel-blog.git
 ```
 
-2.修改目录下的.env文件,配置你的mysql数据库
+2.把`.env.example`文件改成`.env`文件,配置你的mysql数据库,修改以下
 ```
 DB_HOST=localhost
 DB_DATABASE=homestead
@@ -28,10 +29,10 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
+
 默认登录账户是 `admin@admn.com` 密码 `admin12345`
 
-5.配置你的nginx虚拟主机文件
-参考...
+5.配置你的nginx虚拟主机文件,参考...
 ```
 server {
     listen 80;
