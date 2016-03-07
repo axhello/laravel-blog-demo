@@ -30,7 +30,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
-默认登录账户是 `admin@admn.com` 密码 `admin12345`
+默认登录账户是 `admin@admin.com` 密码 `admin12345`
 
 5.配置你的nginx虚拟主机文件,参考...
 ```
